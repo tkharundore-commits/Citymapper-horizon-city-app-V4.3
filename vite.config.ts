@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Citymapper-horizon-city-app-V4.3/", // <--- AJOUTEZ CETTE LIGNE ICI
+  base: "/Citymapper-horizon-city-app-V4.3/", // <--- COPIEZ CETTE LIGNE EXACTEMENT ICI
   server: {
     host: "::",
     port: 8080,
