@@ -9,6 +9,7 @@ import { FilterTabs } from "@/components/FilterTabs";
 import { DiscoveryCard } from "@/components/DiscoveryCard";
 import { RouteHeader } from "@/components/RouteHeader";
 import { MapView } from "@/components/MapView";
+import { StoriesBar } from "@/components/StoriesBar";
 import { Footer } from "@/components/Footer";
 import { FloatingAction } from "@/components/FloatingAction";
 import { Discovery } from "@/types/discovery";
@@ -248,16 +249,23 @@ export default function Index() {
             </div>
           </aside>
 
-          {/* Map */}
-          <MapView
-            city={selectedCity}
-            discoveries={filteredDiscoveries}
-            startCoords={departureCoords || (selectedCity === "paris" ? [48.8606, 2.3376] : [37.9755, 23.7265])}
-            endCoords={destinationCoords || (selectedCity === "paris" ? [48.8575, 2.3595] : [37.9720, 23.7330])}
-            onDiscoveryClick={handleDiscoveryClick}
-            centerCoords={currentCity.center}
-            zoom={currentCity.zoom}
-          />
+          {/* Map Column */}
+          <div className="flex flex-col gap-0 sticky top-[100px] h-[calc(100vh-120px)]">
+            {/* Stories Bar */}
+            <StoriesBar />
+            {/* Map */}
+            <div className="flex-1 min-h-0">
+              <MapView
+                city={selectedCity}
+                discoveries={filteredDiscoveries}
+                startCoords={departureCoords || (selectedCity === "paris" ? [48.8606, 2.3376] : [37.9755, 23.7265])}
+                endCoords={destinationCoords || (selectedCity === "paris" ? [48.8575, 2.3595] : [37.9720, 23.7330])}
+                onDiscoveryClick={handleDiscoveryClick}
+                centerCoords={currentCity.center}
+                zoom={currentCity.zoom}
+              />
+            </div>
+          </div>
         </div>
       </section>
 

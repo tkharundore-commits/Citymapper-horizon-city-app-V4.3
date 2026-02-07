@@ -195,7 +195,7 @@
    }, [discoveries]);
  
    return (
-     <main className="relative rounded-3xl overflow-hidden shadow-lg h-[calc(100vh-120px)] sticky top-[100px]">
+     <main className="relative rounded-3xl overflow-hidden shadow-lg h-full">
        <div ref={mapContainerRef} className="w-full h-full" />
        <MapControls
          onMyLocation={handleMyLocation}
